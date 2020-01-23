@@ -11,19 +11,94 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
   <link href="https://fonts.googleapis.com/css?family=Krub:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="header">
-      <nav>
-          <a href="#">Inicio</a>
-          <a href="#">Nosotros</a>
-          <a href="#">Clientes</a>
-          <a href="#">Contactos</a>
-      </nav>
+  <header class="site-header">
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Clientes</a>
+      <a href="#">Contactos</a>
+  </header>
+
+  <div class="hero">
+    <div class="contenedor-hero">
+      <h1>Diseño y Desarrollo Freelancer</h1>
+      <p><i class="fas fa-map-marker-alt"></i> La Plata, Buenos aires</p>
+      <a href="#" class="boton">Contactar</a>
+    </div>
   </div>
 
+  <div class="contenedor">
+    <main class="servicios">
+      <h2>Nuestros Servicios</h2>
+      <div class="contenedor-servicios">
+        <div class="servicio">
+          <h3>Diseño Web</h3>
+          <div class="iconos">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="servicio">
+          <h3>Aplicaciones Mobiles</h3>
+          <div class="iconos">
+            <i class="fab fa-android"></i>
+            <i class="fab fa-apple"></i>
+          </div>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="servicio">
+          <h3>Social Media</h3>
+          <div class="iconos">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook-square"></i>
+          </div>
+          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </main>
+    <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <form action="#">
+        <legend>Contactános llenando todos los campos</legend>
+        <div class="contenedor-campos">
+          <div class="campo">
+            <label>Nombre</label>
+
+            <input type="text" name="nombre" placeholder="Nombre">
+          </div>
+          <div class="campo">
+            <label>Teléfono</label>
+
+            <input type="tel" name="telefono" placeholder="Teléfono">
+          </div>
+          <div class="campo w-100">
+            <label>Correo</label>
+
+            <input type="mail" name="correo" placeholder="Mail">
+          </div>
+          <div class="campo w-100">
+            <label>Mensaje:</label>
+
+            <textarea></textarea>
+          </div>
+        </div>
+        <!--.contenedor-campos-->
+        <div class="enviar">
+          <input class="boton" type="submit" value="Enviar">
+        </div>
+      </form>
+    </section>
+  </div>
 
 </body>
 

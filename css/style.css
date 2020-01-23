@@ -1,50 +1,221 @@
-:root {
+:root {/**Estas son las variables que se van a agregar en la parte principal del proyecto**/
     --blanco: #ffffff;
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
     --oscuro: #212121;
 }
+
 html {
     box-sizing: border-box;
     min-height: 100%;
-    font-size: 62.5%;
+    font-size: 62.5%;/**62.5% es 10px**/
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 body {
     font-family: 'Krub', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.6rem;/**1.6 son 16px**/
     background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
     min-height: 100%;
 }
-.header nav {
-    padding: 1rem 0;
+h1,h2,h3{
+  margin: 0;
+}
+h2,h3{
+  text-align: center;
+}
+h3{
+  color: var(--secundario);
+  font-weight: 400;
+  font-size: 3rem;
+}
+p{
+  font-size: 1.8rem;
+  line-height: 2;
+}
+.site-header nav {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem 0;
+
     display: flex;
 
     flex-direction: column;
     align-items: center;
 }
 @media (min-width:768px) {
-    .header nav {
+    .site-header nav {
         flex-direction: row;
         justify-content: space-between;
     }
 }
-.header nav a{
+.site-header nav a{
     color: var(--oscuro);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
-.header nav a:last-of-type {
+.site-header nav a:last-of-type {
     margin-bottom:0;
 }
 @media (min-width:768px) {
-    .header nav a{
+    .site-header nav a{
         margin-bottom: 0;
     }
+}
+.hero{
+  height: 45rem;
+  background-image: url(../img/hero.jpg);
+  position: relative;
+  display: flex;
+  justify-content: center;/*horizontalmente centrado por que el direction estan como row*/
+  align-items: center;/*centra verticalmente por que es row si se pone como column se invierte con el justify*/
+}
+.hero::after{/*esta encima de todo*/
+  content: '';
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.contenedor-hero{/*¿como traigo al frente el texto que esta atras del after?*/
+  color: white;
+  /*con estas 2 lineas se resuelve*/
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.contenedor-hero i {
+  font-size: 5rem;
+  color: var(--primario);
+}
+.boton{
+  /*para dar color y cuerpo del boton*/
+  background-color: var(--secundario);
+  padding: 1rem 5rem;
+/*para la separacion del boton*/
+  display: inline-block;
+  margin-top: 1rem;
+/*para editar el texto del boton*/
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  /*poner un borde a los botones*/
+  border-radius: .5rem;
+  border: none;
+}
+.boton:hover{
+  cursor: pointer;
+}
+.contenedor{
+  max-width: 1200px;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.contenedor-servicios{
+  margin-top: 3rem;
+}
+
+@media (min-width:768px) {
+    .contenedor-servicios{
+      display: flex;/*se coloca uno al lado del otro*/
+      justify-content: space-between;
+    }
+    .servicio{
+      /*esto es como un margin 0 auto pero con flex*/
+      flex: 0 0 calc(33.3% - 1rem);/*1ro factor de crecimiento, 2do lo que se hace mas pequeño el ultimo es su base*/
+      /*haci se pueden crear grids usando flexbox*/
+    }
+}
+
+.servicio{/*solucion tipo flex para centrar los iconos usando al padre de iconos que es servicio */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*con estas 3 lineas se puede centrar usando display: flex*/
+}
+
+.iconos{
+  /*darle cuerpo aumentando alto y ancho*/
+  width: 100px;
+  height: 100px;
+  /*hacerlo redondo y con fondo amarillo*/
+  border-radius: 50%;
+  background-color: var(--primario);
+  /*alinear items y centrarlos con flexbox*/
+  display: flex;
+  justify-content: space-evenly;/*darle espacio entre los iconos*/
+  align-items: center;
+  margin-top: 2rem;/*separar icono de el titulo*/
+}
+.iconos{
+  /*aumentar el tamaño de los iconos*/
+  font-size: 3rem;
+}
+form {
+    background-color: var(--gris);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+form legend {
+    display: inline-block;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primario);
+    margin-bottom: 2rem;
+}
+@media (min-width:768px) {
+  .form{
+    max-width: 800px;
+    margin: 3rem; auto;
+  }
+  .contenedor-campos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .campo{
+    flex: 0 0 calc(50%);
+  }
+}
+
+.campo{
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.campo label{
+  flex: 0 0 90px;
+  padding-top: .5rem;
+  margin-left: 1rem;
+  color: white;
+}
+.campo input{
+  flex: 1;
+  height: 4rem;
+}
+.campo textarea{
+  height: 6rem;
+  flex: 1;
+}
+.w-100{
+  flex: 0 0 100%;
+}
+.enviar{
+  display: flex;
+  justify-content: flex-end;
 }
